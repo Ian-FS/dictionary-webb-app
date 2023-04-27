@@ -6,3 +6,9 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+}
