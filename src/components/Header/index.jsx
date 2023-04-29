@@ -10,8 +10,11 @@ function Header() {
                 </div>
                 <div>
                     <h2></h2>
-                    <span></span>
-                    <img src="/src/assets/images/icon-moon.svg" alt="" />
+                    <div className="mode-theme">
+                        <div><i></i></div>
+                        <img src="/src/assets/images/icon-moon.svg" alt="" />
+                    </div>
+
                 </div>
             </header>
         </>
