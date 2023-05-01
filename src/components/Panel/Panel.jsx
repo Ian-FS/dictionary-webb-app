@@ -1,4 +1,8 @@
 import React from 'react'
+import WordPanel from '../WordPanel/WordPanel'
+import NounPanel from '../NounPanel/NounPanel'
+import VerbPanel from '../VerbPanel/VerbPanel'
+import SourcePanel from '../SourcePanel/SourcePanel'
 
 export default function Panel() {
     return (
@@ -6,7 +10,7 @@ export default function Panel() {
             <WordPanel />
             <NounPanel />
             <VerbPanel />
-            <Source />
+            <SourcePanel />
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.scss'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
+import Panel from './components/Panel/Panel'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     <div className='container'>
       <Header />
       <SearchBar handleInput={handleInput} />
+      <Panel />
     </div>
   )
 }
