@@ -3,14 +3,14 @@ import './style.scss'
 
 export default function WordPanel() {
     return (
-        <section>
+        <div className='word-panel'>
             <div>
                 <h1>lore idnsoancno</h1>
                 <p>cksnakncakcn</p>
-            </div>
+            </div >
             <div>
                 <img src="/src/assets/images/icon-play.svg" alt="Play" />
             </div>
-        </section>
+        </div>
     )
 }
