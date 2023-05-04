@@ -6,6 +6,7 @@ export default function NounPanel() {
         <div className='noum-panel'>
             <div className='noum'>
                 <h2>noum</h2>
+                <div></div>
             </div>
             <div className='meaning'>
                 <h2>Meaning</h2>
