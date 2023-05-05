@@ -2,12 +2,14 @@
     .noum {
         display: flex;
         align-items: center;
-        font-size: 2.4rem;
-        color: #2d2d2d;
-        font-style: italic;
         margin-bottom: 40px;
-        font-weight: 700;
         gap: 20px;
+        h2 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            color: #2d2d2d;
+            font-style: italic;
+        }
         div {
             height: 1px;
             width: 100%;
@@ -27,22 +29,14 @@
             font-weight: 400;
             color: #2d2d2d;
             li {
+                margin-left: 36px;
+                margin-bottom: 13px;
+            }
+            p {
+                color: #757575;
                 margin-bottom: 13px;
                 margin-left: 40px;
             }
-        }
-    }
-    .synonyms {
-        display: flex;
-        h2 {
-            font-weight: 400;
-            color: #757575;
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
-        a {
-            font-weight: 700;
-            color: #a445ed;
         }
     }
 }
