@@ -4,21 +4,26 @@ import './App.scss'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import Panel from './components/Panel/Panel'
+import axios from 'axios'
+import { useEffect } from 'react'
+
+const palavra = "car"
 
 function App() {
 
-  const [onChangeInput, setOnChangeInput] = useState("Carregando")
+  useEffect(() => {
+    axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${palavra}`).then((res) => {
+      console.log(res.data)
+      const word = res.data[0].word
 
-  const handleInput = (event) => {
-    setOnChangeInput(event.target.value)
-    return console.log(onChangeInput)
-  }
+    })
+  })
 
   return (
     <div className='container'>
       <Header />
-      <SearchBar handleInput={handleInput} />
-      <Panel />
+      <SearchBar />
+      <Panel word={word} />
     </div>
   )
 }
