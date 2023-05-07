@@ -1,11 +1,11 @@
 import React from 'react'
 import './style.scss'
 
-export default function WordPanel() {
+export default function WordPanel({ word }) {
     return (
         <div className='word-panel'>
             <div>
-                <h1>lore idnsoancno</h1>
+                <h1>{word}</h1>
                 <p>cksnakncakcn</p>
             </div >
             <div>
