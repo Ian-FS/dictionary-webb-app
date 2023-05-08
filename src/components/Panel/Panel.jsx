@@ -7,7 +7,7 @@ import SourcePanel from '../SourcePanel/SourcePanel'
 export default function Panel(props) {
     return (
         <div>
-            <WordPanel word={props.word} />
+            <WordPanel keyWord={props.keyWord} />
             <MeaningPanel wordType={'Noum'} />
             <Synonyms />
             <MeaningPanel wordType={'Verb'} />
