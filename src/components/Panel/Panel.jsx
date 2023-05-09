@@ -4,10 +4,10 @@ import MeaningPanel from '../MeaningPanel/MeaningPanel'
 import Synonyms from '../Synonyms/Synonyms'
 import SourcePanel from '../SourcePanel/SourcePanel'
 
-export default function Panel(props) {
+export default function Panel({ keyWord }) {
     return (
         <div>
-            <WordPanel keyWord={props.keyWord} />
+            <WordPanel keyWord={keyWord} />
             <MeaningPanel wordType={'Noum'} />
             <Synonyms />
             <MeaningPanel wordType={'Verb'} />

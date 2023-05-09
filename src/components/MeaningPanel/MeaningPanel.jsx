@@ -11,12 +11,8 @@ export default function MeaningPanel({ wordType }) {
             <div className='meaning'>
                 <h2>Meaning</h2>
                 <ul>
-                    <li>evsvdsvds</li>
-                    <p>"xakjbxakjbxsakjb"</p>
-                    <li>vdsvsdvsdv</li>
-                    <p>"xakjbxakjbxsakjb"</p>
-                    <li>vdsvsdvSVvd</li>
-                    <p>"xakjbxakjbxsakjb"</p>
+                    <li></li>
+                    <p></p>
                 </ul>
             </div>
         </div>

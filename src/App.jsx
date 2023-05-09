@@ -10,7 +10,8 @@ import axiosInstance from './helper/axios-instance'
 
 function App() {
   const [inputValue, setInputValue] = useState("dictionary")
-  const [keyWord, setKeyWord] = useState({})
+  const [keyWord, setKeyWord] = useState()
+  const [wordMeanings, setWordMeanings] = useState([])
   const [isSearch, setIsSearch] = useState(false)
 
   useEffect(() => {
@@ -19,8 +20,12 @@ function App() {
       .get(inputValue)
       .then((res) => {
         setKeyWord(...res.data)
-      }).catch((error) => console.log(error.message)).finally(setIsSearch(false))
+        console.log(...res.data)
+
+      }).catch((error) => console.log(error)).finally(setIsSearch(false))
   }, [isSearch])
+
+  // console.log(keyWord.meanings[0].definitions)
 
   return (
     <div className='container'>
