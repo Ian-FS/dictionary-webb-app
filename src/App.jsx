@@ -1,42 +1,36 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.scss'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar/SearchBar'
 import Panel from './components/Panel/Panel'
-import axiosInstance from './helper/axios-instance'
+import useAxios from './hooks/use-axios'
+import dictionaryInstance from './helper/axios-instance'
 
 
 
 function App() {
-  const [inputValue, setInputValue] = useState("dictionary")
-  const [keyWord, setKeyWord] = useState()
-  const [wordMeanings, setWordMeanings] = useState([])
-  const [isSearch, setIsSearch] = useState(false)
+  const [inputValue, setInputValue] = useState("car")
 
-  useEffect(() => {
-    isSearch
-    axiosInstance
-      .get(inputValue)
-      .then((res) => {
-        setKeyWord(...res.data)
-        console.log(...res.data)
 
-      }).catch((error) => console.log(error)).finally(setIsSearch(false))
-  }, [isSearch])
+  const [data, isSearch, setIsSearch] = useAxios({
+    axiosInstance: dictionaryInstance,
+    method: 'get',
+    url: inputValue,
+  })
 
-  // console.log(keyWord.meanings[0].definitions)
+  console.log(data.word)
 
   return (
     <div className='container'>
       <Header />
       <SearchBar
-        keyWord={keyWord}
-        inputValue={inputValue}
+        keyWord={data.word}
+        inputValue={"car"}
         setInputValue={setInputValue}
         setIsSearch={setIsSearch}
       />
-      <Panel keyWord={keyWord} />
+      <Panel keyWord={data} />
     </div>
   )
 }
