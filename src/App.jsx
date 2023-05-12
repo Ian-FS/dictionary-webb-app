@@ -19,7 +19,7 @@ function App() {
     url: inputValue,
   })
 
-  console.log(data.word)
+  console.log(data.meanings[0].definitions)
 
   return (
     <div className='container'>
@@ -30,7 +30,7 @@ function App() {
         setInputValue={setInputValue}
         setIsSearch={setIsSearch}
       />
-      <Panel keyWord={data} />
+      <Panel keyWord={data} definitions={data.meanings[0].definitions} />
     </div>
   )
 }
