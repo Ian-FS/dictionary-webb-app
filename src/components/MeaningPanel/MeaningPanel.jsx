@@ -12,11 +12,14 @@ export default function MeaningPanel({ wordType, definitions }) {
                 <h2>Meaning</h2>
                 <ul>
                     {
-                        definitions.map((definition) => {
-                            <li>
-                                {definition}
-                            </li>
-                        })
+                        // definitions?.map((definition) => {
+                        //     return (
+                        //         // <li key={definition}>
+                        //         //     {definition}
+                        //         // </li>
+                        //     )
+
+                        // })
                     }
                 </ul>
             </div>

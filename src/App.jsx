@@ -10,7 +10,7 @@ import dictionaryInstance from './helper/axios-instance'
 
 
 function App() {
-  const [inputValue, setInputValue] = useState("car")
+  const [inputValue, setInputValue] = useState("mother")
 
 
   const [data, isSearch, setIsSearch] = useAxios({
@@ -19,18 +19,26 @@ function App() {
     url: inputValue,
   })
 
-  console.log(data.meanings[0].definitions)
+  const handleChange = (event) => {
+    const { value } = event.target
+    setInputValue(value)
+  }
+
+  // console.log(data)
+
+  if (isSearch) {
+    return <span>Carregando</span>
+  }
 
   return (
-    <div className='container'>
+    <div className='container' >
       <Header />
       <SearchBar
-        keyWord={data.word}
-        inputValue={"car"}
-        setInputValue={setInputValue}
-        setIsSearch={setIsSearch}
+        inputValue={inputValue}
+        handleChange={handleChange}
+        keyWord={data[0]?.word}
       />
-      <Panel keyWord={data} definitions={data.meanings[0].definitions} />
+      <Panel data={data[0]?.word} />
     </div>
   )
 }

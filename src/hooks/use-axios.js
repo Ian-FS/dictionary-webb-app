@@ -13,12 +13,11 @@ export default function useAxios(configRequest) {
           ...otherConfig,
         });
         isSearch;
-        const data = res.data;
-        setData(...data);
+        setData(res.data);
       } catch (error) {
         console.log(error);
       } finally {
-        setIsSearch(false);
+        setIsSearch(true);
       }
     };
     fetchData();

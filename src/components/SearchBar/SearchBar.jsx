@@ -1,16 +1,17 @@
 import React from 'react'
 import './style.scss'
 
-export default function SearchBar({ setInputValue, inputValue, setIsSearch, keyWord }) {
+export default function SearchBar({ handleChange, inputValue, keyWord }) {
 
-    const handleChange = (event) => {
-        setInputValue(event.target.value)
-    }
+
+
+
+
 
     return (
         <div className='search-bar'>
-            <input type="text" value={inputValue} onChange={() => handleChange} onKeyUp={(event) => (event.key === "Enter" && inputValue !== keyWord.word) && setIsSearch(true)} />
-            <img className='lupa' src="/src/assets/images/icon-search.svg" alt="pesquisar" onClick={() => (inputValue !== keyWord.word) && setIsSearch(true)} />
+            <input type="text" value={inputValue} onChange={handleChange} onKeyUp={(event) => (event.key === "Enter" && inputValue !== keyWord[0].word) && setIsSearch(true)} />
+            <img className='lupa' src="/src/assets/images/icon-search.svg" alt="pesquisar" onClick={() => (inputValue !== keyWord[0].word) && setIsSearch(true)} />
         </div>
     )
 }
