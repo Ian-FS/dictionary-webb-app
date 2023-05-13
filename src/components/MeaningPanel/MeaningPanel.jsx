@@ -11,16 +11,16 @@ export default function MeaningPanel({ wordType, definitions }) {
             <div className='meaning'>
                 <h2>Meaning</h2>
                 <ul>
-                    {
-                        // definitions?.map((definition) => {
-                        //     return (
-                        //         // <li key={definition}>
-                        //         //     {definition}
-                        //         // </li>
-                        //     )
+                    {/* {
+                        definitions?.map((definition) => {
+                            return (
+                                <li key={definition}>
+                                    {definition}
+                                </li>
+                            )
 
-                        // })
-                    }
+                        })
+                    } */}
                 </ul>
             </div>
         </div>

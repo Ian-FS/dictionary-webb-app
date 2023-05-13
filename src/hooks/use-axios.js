@@ -4,7 +4,8 @@ import { useState } from "react";
 export default function useAxios(configRequest) {
   const { axiosInstance, method, url, otherConfig = {} } = configRequest;
   const [data, setData] = useState([]);
-  const [isSearch, setIsSearch] = useState(false);
+  const [researched, setResearched] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,16 +13,17 @@ export default function useAxios(configRequest) {
         const res = await axiosInstance[method](url, {
           ...otherConfig,
         });
-        isSearch;
         setData(res.data);
       } catch (error) {
         console.log(error);
       } finally {
-        setIsSearch(true);
+        setLoading(false);
+        setResearched(true);
       }
     };
+    researched;
     fetchData();
-  }, [isSearch]);
+  }, [researched]);
 
-  return [data, isSearch, setIsSearch];
+  return [data, setResearched, loading];
 }

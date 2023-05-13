@@ -13,7 +13,7 @@ function App() {
   const [inputValue, setInputValue] = useState("mother")
 
 
-  const [data, isSearch, setIsSearch] = useAxios({
+  const [data, setResearched, loading] = useAxios({
     axiosInstance: dictionaryInstance,
     method: 'get',
     url: inputValue,
@@ -23,10 +23,17 @@ function App() {
     const { value } = event.target
     setInputValue(value)
   }
+  const handleKeyUp = (event) => (event.key === "Enter" && inputValue !== data[0]?.word)
+    && setResearched(false)
 
-  // console.log(data)
+  // console.log(data[0].meanings[0])
 
-  if (isSearch) {
+  const handleClick = () => (inputValue !== data[0]?.word)
+    && setResearched(false)
+
+  // console.log(data[0]?.phonetics[1]?.text)
+  // console.log(data[0]?.word)
+  if (loading) {
     return <span>Carregando</span>
   }
 
@@ -36,9 +43,11 @@ function App() {
       <SearchBar
         inputValue={inputValue}
         handleChange={handleChange}
-        keyWord={data[0]?.word}
+        handleKeyUp={handleKeyUp}
+        handleClick={handleClick}
+        setResearched={setResearched}
       />
-      <Panel data={data[0]?.word} />
+      <Panel data={data[0]} />
     </div>
   )
 }
