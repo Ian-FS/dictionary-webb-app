@@ -8,8 +8,8 @@ export default function Panel({ data }) {
     return (
         <div>
             <WordPanel keyWord={data} />
-            <MeaningPanel wordType={'Noum'} definitions={data.meanings[0].definitions} />
-            <Synonyms />
+            <MeaningPanel wordType={'Noum'} meanings={data} />
+            <Synonyms synonyms={data} />
             <MeaningPanel wordType={'Verb'} />
             <SourcePanel />
         </div>
