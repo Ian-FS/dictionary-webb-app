@@ -7,7 +7,6 @@ export default function Synonyms({ synonyms }) {
         <div>
             <div className='synonyms'>
                 {
-                    // synonyms &&
                     <h2>Synonyms:
                         <span>
                             {

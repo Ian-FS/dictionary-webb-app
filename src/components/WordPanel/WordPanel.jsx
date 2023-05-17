@@ -13,7 +13,7 @@ export default function WordPanel({ keyWord }) {
             </div >
             <div className='play'>
                 <img
-                    src="/src/assets/images/icon-play.svg"
+                    src="./src/assets/images/icon-play.svg"
                     alt="Play"
                     onClick={() => { document.getElementById("audio-play").play() }}
                 />
