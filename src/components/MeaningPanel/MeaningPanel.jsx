@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.scss'
 
-export default function MeaningPanel({ wordType, meanings }) {
+export default function MeaningPanel({ wordType, definitions }) {
     return (
         <div className='noum-panel'>
             <div className='noum'>
@@ -11,12 +11,13 @@ export default function MeaningPanel({ wordType, meanings }) {
             <div className='meaning'>
                 <h2>Meaning</h2>
                 <ul>
-                    <li children={meanings?.meanings[0]?.definitions[0]?.definition} />
-                    <p children={meanings?.meanings[0]?.definitions[0].example} />
-                    <li children={meanings?.meanings[0]?.definitions[1]?.definition} />
-                    <p children={meanings?.meanings[0]?.definitions[1].example} />
-                    <li children={meanings?.meanings[0]?.definitions[2]?.definition} />
-                    <p children={meanings?.meanings[0]?.definitions[2].example} />
+                    {
+                        (definitions?.slice(0, 3)).map((definition, index) =>
+                            <div key={index}>
+                                <li>{definition.definition}</li>
+                                <p>{definition.example}</p>
+                            </div>)
+                    }
                 </ul>
             </div>
         </div>

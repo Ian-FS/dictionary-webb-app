@@ -10,7 +10,7 @@ import dictionaryInstance from './helper/axios-instance'
 
 
 function App() {
-  const [inputValue, setInputValue] = useState("mother")
+  const [inputValue, setInputValue] = useState("keyboard")
 
 
   const [data, setResearched, loading] = useAxios({
@@ -26,13 +26,9 @@ function App() {
   const handleKeyUp = (event) => (event.key === "Enter" && inputValue !== data[0]?.word)
     && setResearched(false)
 
-  // console.log(data[0].meanings[0])
-
   const handleClick = () => (inputValue !== data[0]?.word)
     && setResearched(false)
 
-  // console.log(data[0]?.phonetics[1]?.text)
-  // console.log(data[0]?.word)
   if (loading) {
     return <span>Carregando</span>
   }

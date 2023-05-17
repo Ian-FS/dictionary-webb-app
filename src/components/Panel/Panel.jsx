@@ -5,13 +5,24 @@ import Synonyms from '../Synonyms/Synonyms'
 import SourcePanel from '../SourcePanel/SourcePanel'
 
 export default function Panel({ data }) {
+    console.log(data?.meanings)
     return (
-        <div>
+        <div >
             <WordPanel keyWord={data} />
-            <MeaningPanel wordType={'Noum'} meanings={data} />
-            <Synonyms synonyms={data} />
-            <MeaningPanel wordType={'Verb'} />
-            <SourcePanel />
-        </div>
+            {
+                (data?.meanings?.slice(0, 2))?.map((meaning, index) =>
+                    <div key={index}>
+                        <MeaningPanel
+                            key={meaning?.partOfSpeech}
+                            wordType={meaning?.partOfSpeech}
+                            definitions={meaning?.definitions}
+                        />
+                        <Synonyms synonyms={meaning?.synonyms} />
+                    </div>
+
+                )
+            }
+            < SourcePanel />
+        </div >
     )
 }

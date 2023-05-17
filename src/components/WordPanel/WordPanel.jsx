@@ -2,8 +2,6 @@ import React from 'react'
 import './style.scss'
 
 export default function WordPanel({ keyWord }) {
-
-
     const newPhonetics = keyWord.phonetics.filter(phonetic => phonetic.audio !== '')
 
     return (
@@ -14,7 +12,11 @@ export default function WordPanel({ keyWord }) {
                 {(newPhonetics[2] !== undefined) && <p>{newPhonetics[2]?.text}</p>}
             </div >
             <div className='play'>
-                <img src="/src/assets/images/icon-play.svg" alt="Play" onClick={() => { document.getElementById("audio-play").play() }} />
+                <img
+                    src="/src/assets/images/icon-play.svg"
+                    alt="Play"
+                    onClick={() => { document.getElementById("audio-play").play() }}
+                />
                 {(newPhonetics.length < 3 && newPhonetics[1] !== undefined) && <audio id="audio-play" src={newPhonetics[1]?.audio} ></audio>}
                 {(newPhonetics[2] !== undefined) && <audio id="audio-play" src={newPhonetics[2]?.audio} ></audio>}
             </div>
