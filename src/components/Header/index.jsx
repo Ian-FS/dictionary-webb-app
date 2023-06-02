@@ -1,5 +1,6 @@
 import React from "react";
-import './style.scss'
+import './style.scss';
+import arrowSvg from '../../assets/images/icon-arrow-down.svg'
 
 function Header() {
     return (
@@ -11,7 +12,7 @@ function Header() {
                 <div className="right-head">
                     <div className="font-type">
                         <h2>Sans Serif</h2>
-                        <img src="/src/assets/images/icon-arrow-down.svg" alt="seta para baixo" />
+                        <img src={arrowSvg} alt="seta para baixo" />
                     </div>
                     <div className="line-vertical"></div>
                     <div className="mode-theme">
