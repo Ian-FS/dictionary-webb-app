@@ -5,7 +5,6 @@ import Synonyms from '../Synonyms/Synonyms'
 import SourcePanel from '../SourcePanel/SourcePanel'
 
 export default function Panel({ data }) {
-    console.log(data?.meanings)
     return (
         <div >
             <WordPanel keyWord={data} />
@@ -22,7 +21,7 @@ export default function Panel({ data }) {
 
                 )
             }
-            < SourcePanel />
+            < SourcePanel keyWord={data.word} />
         </div >
     )
 }
