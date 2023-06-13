@@ -3,8 +3,12 @@ import './style.scss';
 import arrowSvg from '../../assets/images/icon-arrow-down.svg'
 import logoSvg from '../../assets/images/logo.svg'
 import moonSvg from '../../assets/images/icon-moon.svg'
+import { useState } from "react";
 
 function Header() {
+
+    const typesFonts = ['Sans Serif', 'Serif', 'Mono']
+
     return (
         <>
             <header>
@@ -13,8 +17,11 @@ function Header() {
                 </div>
                 <div className="right-head">
                     <div className="font-type">
-                        <h2>Sans Serif</h2>
-                        <img src={arrowSvg} alt="seta para baixo" />
+                        <select name="types-fonts" id="" >
+                            {
+                                typesFonts.map((font) => <option value={font} key={font}>{font}</option>)
+                            }
+                        </select>
                     </div>
                     <div className="line-vertical"></div>
                     <div className="mode-theme">
