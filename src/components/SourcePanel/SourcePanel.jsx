@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.scss'
+import newWindowSvg from "../../assets/images/icon-new-window.svg"
 
 export default function SourcePanel({ keyWord }) {
     return (
@@ -8,7 +9,7 @@ export default function SourcePanel({ keyWord }) {
             <div className='source-link'>
                 <h2>Source
                     <a href={`https://en.wiktionary.org/wiki/${keyWord}`}>{`https://en.wiktionary.org/wiki/${keyWord}`}</a>
-                    <img src="/src/assets/images/icon-new-window.svg" alt="nova pagina" />
+                    <img src={newWindowSvg} alt="nova pagina" />
                 </h2>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.scss'
+import playSvg from "../../assets/images/icon-play.svg"
 
 export default function WordPanel({ keyWord }) {
     const newPhonetics = keyWord.phonetics.filter(phonetic => phonetic.audio !== '')
@@ -13,7 +14,7 @@ export default function WordPanel({ keyWord }) {
             </div >
             <div className='play'>
                 <img
-                    src="./src/assets/images/icon-play.svg"
+                    src={playSvg}
                     alt="Play"
                     onClick={() => { document.getElementById("audio-play").play() }}
                 />
