@@ -5,19 +5,32 @@
     margin-bottom: 20px;
 }
 .source-link {
-    margin-bottom: 124px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
     h2 {
-        display: flex;
-        align-items: center;
+        font-family: Inter;
         font-size: 1.4rem;
         font-weight: 400;
+        line-height: 17px;
+        text-align: left;
         color: #757575;
-        a {
-            font-size: 14px;
-            font-weight: 400;
-            color: #2d2d2d;
-            margin-left: 20px;
-            margin-right: 9px;
-        }
+        text-decoration: underline;
+        text-decoration-color: #757575;
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 1.5px;
+    }
+
+    a {
+        font-family: Inter;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #2d2d2d;
+        margin-left: 20px;
+        margin-right: 9px;
+        text-decoration: underline;
+        text-decoration-color: #2d2d2d;
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 1.5px;
     }
 }
