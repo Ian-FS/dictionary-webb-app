@@ -7,11 +7,11 @@ import Panel from './components/Panel/Panel'
 import useAxios from './hooks/use-axios'
 import dictionaryInstance from './helper/axios-instance'
 
-
-
 function App() {
   const [inputValue, setInputValue] = useState("keyboard")
-
+  const [font, setFont] = useState({
+    fontFamily: "sans serif"
+  })
 
   const [data, setResearched, loading] = useAxios({
     axiosInstance: dictionaryInstance,
@@ -34,8 +34,8 @@ function App() {
   }
 
   return (
-    <div className='container' >
-      <Header />
+    <div id='container' style={font} className='container' >
+      <Header setFont={setFont} />
       <SearchBar
         inputValue={inputValue}
         handleChange={handleChange}
@@ -44,7 +44,7 @@ function App() {
         setResearched={setResearched}
       />
       <Panel data={data[0]} />
-    </div>
+    </div >
   )
 }
 

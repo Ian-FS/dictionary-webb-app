@@ -1,13 +1,12 @@
 import React from "react";
 import './style.scss';
-import arrowSvg from '../../assets/images/icon-arrow-down.svg'
 import logoSvg from '../../assets/images/logo.svg'
 import moonSvg from '../../assets/images/icon-moon.svg'
-import { useState } from "react";
 
-function Header() {
+function Header({ setFont }) {
 
     const typesFonts = ['Sans Serif', 'Serif', 'Mono']
+    const handleChange = (event) => setFont({ fontFamily: event.target.value.toLowerCase() })
 
     return (
         <>
@@ -17,9 +16,9 @@ function Header() {
                 </div>
                 <div className="right-head">
                     <div className="font-type">
-                        <select name="types-fonts" id="" >
+                        <select onChange={handleChange} name="types-fonts" id="types-fonts" >
                             {
-                                typesFonts.map((font) => <option value={font} key={font}>{font}</option>)
+                                typesFonts.map((font) => <option className="option" value={font} key={font}>{font}</option>)
                             }
                         </select>
                     </div>
