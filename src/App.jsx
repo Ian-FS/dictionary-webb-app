@@ -9,8 +9,9 @@ import dictionaryInstance from './helper/axios-instance'
 
 function App() {
   const [inputValue, setInputValue] = useState("keyboard")
+
   const [font, setFont] = useState({
-    fontFamily: "sans serif"
+    fontFamily: "Inter, Sans Serif"
   })
 
   const [data, setResearched, loading] = useAxios({

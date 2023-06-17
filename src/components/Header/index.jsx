@@ -6,7 +6,12 @@ import moonSvg from '../../assets/images/icon-moon.svg'
 function Header({ setFont }) {
 
     const typesFonts = ['Sans Serif', 'Serif', 'Mono']
-    const handleChange = (event) => setFont({ fontFamily: event.target.value.toLowerCase() })
+
+    const handleChange = (event) => {
+        if (event.target.value === 'Sans Serif') setFont({ fontFamily: "Inter, Sans Serif" })
+        if (event.target.value === 'Serif') setFont({ fontFamily: "Lora, Serif" })
+        if (event.target.value === 'Mono') setFont({ fontFamily: "Inconsolata, Monospace" });
+    }
 
     return (
         <>
@@ -27,7 +32,6 @@ function Header({ setFont }) {
                         <div><i></i></div>
                         <img src={moonSvg} alt="" />
                     </div>
-
                 </div>
             </header>
         </>
