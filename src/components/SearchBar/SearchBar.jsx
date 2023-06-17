@@ -6,7 +6,7 @@ export default function SearchBar({ handleChange, inputValue, handleKeyUp, handl
 
     return (
         <div className='search-bar'>
-            <input type="text" value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
+            <input type="text" value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} placeholder="Search for any word..." />
             <img className='lupa' src={lupaSvg} alt="pesquisar" onClick={handleClick} />
         </div>
     )
