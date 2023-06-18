@@ -29,7 +29,10 @@ function Header({ setFont }) {
                     </div>
                     <div className="line-vertical"></div>
                     <div className="mode-theme">
-                        <div><i></i></div>
+                        <div onClick={(event) => {
+                            event.target.lastChild.classList.toggle("i-toggle")
+                            event.target.classList.toggle("div-toggle")
+                        }}><i></i></div>
                         <img src={moonSvg} alt="" />
                     </div>
                 </div>
