@@ -3,6 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
 
 :root {
+  --background-primary: #ffffff;
+  --background-secondary: #f4f4f4;
+  --color-primary: #2d2d2d;
+  --line-backgroundColor: #e9e9e9;
+
+  .dark-theme {
+    --background-primary: #050505;
+    --background-secondary: #1f1f1f;
+    --color-primary: #ffffff;
+    --line-backgroundColor: #3a3a3a;
+  }
 }
 
 * {
@@ -17,5 +28,6 @@ html {
 }
 html,
 body {
+  background-color: var(--background-primary);
   // height: 100vh;
 }

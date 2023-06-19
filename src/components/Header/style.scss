@@ -19,7 +19,8 @@ header {
                 appearance: none;
                 -webkit-appearance: none;
                 -moz-appearance: none;
-                background: url(../../assets/images/icon-arrow-down.svg) no-repeat center right #fff;
+                background: url(../../assets/images/icon-arrow-down.svg) no-repeat center right
+                    var(--background-primary);
                 border: none;
                 padding-right: 30px;
                 font-family: Inter;
@@ -37,7 +38,7 @@ header {
         .line-vertical {
             width: 1px;
             height: 32px;
-            background-color: #e9e9e9;
+            background-color: var(--line-backgroundColor);
         }
         .mode-theme {
             display: flex;
@@ -64,6 +65,9 @@ header {
             }
             .div-toggle {
                 background-color: #a445ed;
+            }
+            .img-toggle > path {
+                stroke: #a445ed;
             }
         }
     }
